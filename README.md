@@ -21,4 +21,4 @@ Then start the development server
 $ python run.py
 ```
 
-Browse to http://0.0.0.0:8080
+Browse to http://127.0.0.1:8080

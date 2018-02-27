@@ -2,7 +2,7 @@ import pandas as pd
 
 from app import app, db
 from flask import render_template, request, redirect, url_for, flash
-from models import *
+from app.models import *
 import sqlite3
 
 ###
