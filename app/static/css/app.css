@@ -1,3 +1,49 @@
-body {
-    padding-top: 50px;
+header {
+    text-align: center;
 }
+
+body {
+    padding: 50px  30px 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+}
+
+
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#checker {
+    flex-grow: 1;
+    text-align: center;
+    overflow: overlay;
+}
+
+#table {
+    flex-grow: 9;
+    text-align: center;
+    overflow: overlay;
+}
+
+.flex > div {
+    margin: 10px;
+}
+
+label {
+    display: block;
+}
+
+input.region {
+    margin-left: 50px;
+}
+
+
+table {
+    margin: 0 auto;
+}
+

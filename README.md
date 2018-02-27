@@ -1,6 +1,6 @@
-# flask_sqlite
-A Flask Application that demonstrates Flask-WTF and Flask-SQLAlchemy using a
-SQLite database.
+## Prepearing
+There are 4 tables, Threshold, Offset, Cache and Final. You can put the data into front 3 tables. 
+
 
 ## Instructions
 As always ensure you create a virtual environment for this application and install
@@ -12,15 +12,8 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-Then create the sqlite3 database file and create the tables based on our `app/models.py`.
+Then make a scheduling job to run get_finaltable.py periodically. This will update final table  by combining 3 tables you provide periodically. 
 
-```
-$ touch /tmp/mydatabase.db
-$ python
->>> from app import db
->>> db.create_all()
->>> quit()
-```
 
 Then start the development server
 
@@ -29,6 +22,3 @@ $ python run.py
 ```
 
 Browse to http://0.0.0.0:8080
-
-You can then add new users by browsing to http://0.0.0.0:8080/add-user and view
-a list of users by browsing to http://0.0.0.0:8080/users

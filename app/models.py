@@ -1,13 +1,41 @@
 from app import db
 
-class User(db.Model):
+class Area_Region(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    area = db.Column(db.String(20))
+    region = db.Column(db.String(20))
+
+
+    # def __repr__(self):
+    #     return '<User %r>' % self.name
+class Threshold(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    origin_region = db.Column(db.String(20))
+    destination_region = db.Column(db.String(20))
+    threshold = db.Column(db.Integer())
+
+class Offset(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    origin_area = db.Column(db.String(20))
+    destination_area = db.Column(db.String(20))
+    offset = db.Column(db.Integer)
+
+class CacheValue(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    origin_area = db.Column(db.String(20))
+    destination_area = db.Column(db.String(20))
+    msi_origin = db.Column(db.String(20))
+    cache_value = db.Column(db.Integer)
+
+class Final(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(255))
-    email = db.Column(db.String(255), unique=True)
+    origin_area = db.Column(db.String(20))
+    origin_region = db.Column(db.String(20))
+    destination_area = db.Column(db.String(20))
+    destination_region = db.Column(db.String(20))
+    msi_origin = db.Column(db.String(20))
+    final = db.Column(db.Integer)
+    cache_value = db.Column(db.Integer)
 
-    def __init__(self, name, email):
-        self.name = name
-        self.email = email
 
-    def __repr__(self):
-        return '<User %r>' % self.name
+

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Floating Contribution Threshold</title>
+  <link rel="stylesheet" href="static/css/bootstrap-reset.css">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style-responsive.css">
+  <link rel="stylesheet" href="static/css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- <script src="/static/js/functions.js"></script> -->
+</head>
+
+<body>
+
+<!--header start-->
+<div class="navbar-header" ></div>
+    <header class="header white-bg" style="background:darkgray; height:800px" >
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="fa fa-bars"></span>
+        </button>
+
+        <!--logo start-->
+        <a href="/main.html" class="logo"><img alt="" src="static/css/SCH.jpeg"></a>
+        <!--logo end-->
+
+        <div class="full-width navbar-header" style="background:#ffffff" >
+          <H2 class="centered-heading" style="text-align:center">Floating Contribution Threshold</H2>
+        </div>
+    </header>
+
+    <!--header end-->
+<div class="zones_com_init_wrapper" style="float:inherit; display:none">
+    <div class="zones-box">
+        <div class="Offset" style="overflow-y:scroll; max-height:400px">
+    <div style="text-align:center; font-size:25px;color:black"><b>Offset Values</b></div>
+
+    <table>
+    <tr>
+        <th>Origin Area</th>
+        <th>Destination Area</th>
+        <th>OffSet</th>
+    </tr>
+    <tr>
+        <td>O_area1</td>
+        <td>D_Area1</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_area2</td>
+        <td>D_Area2</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_area3</td>
+        <td>D_Area3</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_Area4</td>
+        <td>D_Area4</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_Area5</td>
+        <td>D_Area5</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_Area6</td>
+        <td>D_Area6</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_Area7</td>
+        <td>D_Area7</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_Area8</td>
+        <td>D_Area8</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    <tr>
+        <td>O_Area9</td>
+        <td>D_Area9</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr><tr>
+        <td>O_Area10</td>
+        <td>D_Area10</td>
+        <td>
+            <input type="number" name="offset">
+        </td>
+    </tr>
+    </table>
+        </div>
+    </div>
+</div>
+<br/>
+
+<div class="maintwo">
+<div style="text-align:center; font-size:25px;color:black"><b>ON/OFF</b></div>
+    <div id="one">
+        <div class="re1">
+        <label>
+            <input type="checkbox" id="checkall"> Area-1</label>
+        <label>
+            <input type="checkbox" class="thing"> Region-1</label>
+        <label>
+            <input type="checkbox" class="thing"> Region-2</label>
+        <label>
+            <input type="checkbox" class="thing"> Region-3</label>
+        <label>
+            <input type="checkbox" class="thing"> Region-4</label>
+        <label>
+            <input type="checkbox" class="thing"> Region-5</label>
+    </div>
+</div>
+<div id="two" >
+    <div class="re1">
+    <label>
+        <input type="checkbox" id="checkallone"> Area-2</label>
+    <label>
+        <input type="checkbox" class="one"> Region 21</label>
+    <label>
+        <input type="checkbox" class="one"> Region 22</label>
+    <label>
+        <input type="checkbox" class="one"> Region 23</label>
+</div>
+</div>
+<div id="three">
+    <div class="re1">
+    <label>
+        <input type="checkbox" id="checkalltwo"> Area-3</label>
+    <label>
+        <input type="checkbox" class="two"> Region 31</label>
+    <label>
+        <input type="checkbox" class="two"> Region 32</label>
+    <label>
+        <input type="checkbox" class="two"> Region 33</label>
+    <label>
+        <input type="checkbox" class="two"> Region 34</label>
+</div>
+</div>
+<div id="four">
+        <div class="re1">
+    <label>
+        <input type="checkbox" id="checkallthree"> Area-4</label>
+    <label>
+        <input type="checkbox" class="three"> Region 41</label>
+    <label>
+        <input type="checkbox" class="three"> Region 42</label>
+    <label>
+        <input type="checkbox" class="three"> Region 43</label>
+</div>
+</div>
+<div id="five">
+        <div class="re1">
+            <label>
+                <input type="checkbox" id="checkallfour"> Area-5</label>
+            <label>
+                <input type="checkbox" class="four"> Region 51</label>
+            <label>
+                <input type="checkbox" class="four"> Region 52</label>
+            <label>
+                <input type="checkbox" class="four"> Region 53</label>
+            <label>
+                <input type="checkbox" class="four"> Region 53</label>
+            <label>
+                <input type="checkbox" class="four"> Region 53</label>
+            <label>
+                <input type="checkbox" class="four"> Region 53</label>
+</div>
+</div>
+<div id="six">
+                <div class="re1">
+                    <label>
+                        <input type="checkbox" id="checkallfive"> Area-6</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 61</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+                    <label>
+                        <input type="checkbox" class="five"> Region 62</label>
+</div>
+</div>
+<div id="seven">
+        <div class="re1">
+            <label>
+                <input type="checkbox" id="checkallsix"> Area-7</label>
+            <label>
+                <input type="checkbox" class="six"> Region 71</label>
+            <label>
+                <input type="checkbox" class="six"> Region 72</label>
+            <label>
+                <input type="checkbox" class="six"> Region 73</label>
+            <label>
+                <input type="checkbox" class="six"> Region 73</label>
+            <label>
+                <input type="checkbox" class="six"> Region 73</label>
+            <label>
+                <input type="checkbox" class="six"> Region 73</label>
+            <label>
+                <input type="checkbox" class="six"> Region 73</label>
+            <label>
+                <input type="checkbox" class="six"> Region 73</label>
+        </div>
+
+
+
+
+
+    </br></br></br></br></br></br></br></br>
+</div>
+</div>
+<script>
+
+    var checkboxes = document.querySelectorAll('input.thing'),
+        checkall = document.getElementById('checkall');
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].onclick = function () {
+            var checkedCount = document.querySelectorAll('input.thing:checked').length;
+
+            checkall.checked = checkedCount > 0;
+            checkall.indeterminate = checkedCount > 0 && checkedCount < checkboxes.length;
+        }
+    }
+
+    checkall.onclick = function () {
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = this.checked;
+        }
+    }
+// ----------------------------------------------------------------------------
+
+    var checkboxes1 = document.querySelectorAll('input.one'),
+        checkallone = document.getElementById('checkallone');
+
+    for (var i = 0; i < checkboxes1.length; i++) {
+        checkboxes1[i].onclick = function () {
+            var checkedCount = document.querySelectorAll('input.one:checked').length;
+
+            checkallone.checked = checkedCount > 0;
+            checkallone.indeterminate = checkedCount > 0 && checkedCount < checkboxes1.length;
+        }
+    }
+
+    checkallone.onclick = function () {
+        for (var i = 0; i < checkboxes1.length; i++) {
+            checkboxes1[i].checked = this.checked;
+        }
+    }
+// -------------------------------------------------------------------------------
+        var checkboxes2 = document.querySelectorAll('input.two'),
+            checkalltwo = document.getElementById('checkalltwo');
+
+        for (var i = 0; i < checkboxes2.length; i++) {
+            checkboxes2[i].onclick = function () {
+                var checkedCount = document.querySelectorAll('input.two:checked').length;
+
+                checkalltwo.checked = checkedCount > 0;
+                checkalltwo.indeterminate = checkedCount > 0 && checkedCount < checkboxes2.length;
+            }
+        }
+
+        checkalltwo.onclick = function () {
+            for (var i = 0; i < checkboxes2.length; i++) {
+                checkboxes2[i].checked = this.checked;
+            }
+        }
+// --------------------------------------------------------------------------
+
+        var checkboxes3 = document.querySelectorAll('input.three'),
+            checkallthree = document.getElementById('checkallthree');
+
+        for (var i = 0; i < checkboxes3.length; i++) {
+            checkboxes3[i].onclick = function () {
+                var checkedCount = document.querySelectorAll('input.three:checked').length;
+
+                checkallthree.checked = checkedCount > 0;
+                checkallthree.indeterminate = checkedCount > 0 && checkedCount < checkboxes3.length;
+            }
+        }
+
+        checkallthree.onclick = function () {
+            for (var i = 0; i < checkboxes3.length; i++) {
+                checkboxes3[i].checked = this.checked;
+            }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////////
+            var checkboxes4 = document.querySelectorAll('input.four'),
+                checkallfour = document.getElementById('checkallfour');
+
+            for (var i = 0; i < checkboxes4.length; i++) {
+                checkboxes4[i].onclick = function () {
+                    var checkedCount = document.querySelectorAll('input.four:checked').length;
+
+                    checkallfour.checked = checkedCount > 0;
+                    checkallfour.indeterminate = checkedCount > 0 && checkedCount < checkboxes4.length;
+                }
+            }
+
+            checkallfour.onclick = function () {
+                for (var i = 0; i < checkboxes4.length; i++) {
+                    checkboxes4[i].checked = this.checked;
+                }
+            }
+//////////////////////////////////////////////////////////////////////////////////////////////
+            var checkboxes5 = document.querySelectorAll('input.five'),
+                checkallfive = document.getElementById('checkallfive');
+
+            for (var i = 0; i < checkboxes5.length; i++) {
+                checkboxes5[i].onclick = function () {
+                    var checkedCount = document.querySelectorAll('input.five:checked').length;
+
+                    checkallfive.checked = checkedCount > 0;
+                    checkallfive.indeterminate = checkedCount > 0 && checkedCount < checkboxes5.length;
+                }
+            }
+
+            checkallfive.onclick = function () {
+                for (var i = 0; i < checkboxes5.length; i++) {
+                    checkboxes5[i].checked = this.checked;
+                }
+            }
+//////////////////////////////////////////////////////////////////////////////////////////////
+            var checkboxes6 = document.querySelectorAll('input.six'),
+                checkallsix = document.getElementById('checkallsix');
+
+            for (var i = 0; i < checkboxes6.length; i++) {
+                checkboxes6[i].onclick = function () {
+                    var checkedCount = document.querySelectorAll('input.six:checked').length;
+
+                    checkallsix.checked = checkedCount > 0;
+                    checkallsix.indeterminate = checkedCount > 0 && checkedCount < checkboxes6.length;
+                }
+            }
+
+            checkallsix.onclick = function () {
+                for (var i = 0; i < checkboxes6.length; i++) {
+                    checkboxes6[i].checked = this.checked;
+                }
+            }
+
+
+
+</script>
+<style>
+    th {
+        background-color: #FF7900;
+        color: white
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    label {
+        display: block
+    }
+
+    label:first-child {
+        font-weight: bold
+    }
+
+    label:nth-child(n + 2) {
+        margin-left: 1em;
+    }
+   
+
+</style>
+
+      <br><br><br><br><br><br>
+</body>
+        <!--footer start-->
+      <footer class="site-footer navbar-fixed-bottom" style="background:dodgerblue">
+          <div class="text-center">
+             © 2018 Schneider. All Rights Reserved
+              <a href="#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+    
+  </html>

@@ -1,7 +1,26 @@
 {% extends "base.html" %}
-
 {% block main %}
-<h1 class="page-header">Flask Starter Code</h1>
-<p class="lead">Use this starter template for your Flask apps as a way to quickly start any new project.<br>
-All you get are these files and mostly barebones HTML/CSS files.</p>
+    <hr>
+    <div class="flex">
+        <div id="checker">
+            {% for area_region in area_regions %}
+
+            <div>
+                <label> <input id="{{ area_region[0]}}" type="checkbox" class="area">{{ area_region[0] }} </label>
+
+                {% for region in area_region[1] %}
+
+                <label><input id="{{ region }} " type="checkbox" class="region">{{ region }}</label>
+
+                {% endfor %}
+            </div>
+            <br>
+
+            {% endfor %}
+        </div>
+        <div id="table">
+            {{ table|safe }}
+        </div>
+    </div>
+
 {% endblock %}
