@@ -17,11 +17,10 @@ def main():
 
     thread_df = pd.read_sql_query("SELECT * FROM threshold", cnx)
     thread_df = thread_df.drop(['id'], axis=1)
-    thread_df = thread_df.apply(get_area, axis=1)
+    # thread_df = thread_df.apply(get_area, axis=1)
 
     offset_df = pd.read_sql_query("SELECT * FROM offset", cnx)
     offset_df = offset_df.drop(['id'], axis=1)
-
 
     cache_df = pd.read_sql_query("SELECT * FROM cache_value", cnx)
     cache_df = cache_df.drop(['id'], axis=1)
@@ -31,9 +30,9 @@ def main():
     final_df = pd.merge(thread_df, offset_cache_df, how='left', on=['origin_area', 'destination_area'])
     final_df = final_df.dropna()
     final_df['final'] = final_df['offset'] + final_df['threshold']
-    final_df = final_df[['origin_area', 'origin_region', 'destination_area', 'destination_region', 'msi_origin', 'final', 'cache_value']]
+    final_df = final_df[['origin_area', 'origin_region', 'destination_area', 'msi_origin', 'final', 'cache']]
 
-    final_df.to_sql('final', cnx, if_exists='replace', index=False)
+    final_df.to_sql('final', cnx, if_exists='replace')
 
 if __name__ == "__main__":
     main()

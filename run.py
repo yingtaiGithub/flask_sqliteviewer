@@ -2,8 +2,6 @@
 import os
 from app import app
 
-# db.create_all()
-
 extra_dirs = [os.path.join(os.getcwd(),'app', 'template')]
 extra_files = extra_dirs[:]
 for extra_dir in extra_dirs:

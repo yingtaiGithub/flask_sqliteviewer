@@ -11,7 +11,8 @@ $(document).ready(function(){
 
     $(".area").click(function() {
         var area_name = $(this).attr('id')
-        var child_selector = 'td:first-child:contains("' + area_name + '")'
+//        var child_selector = 'td:first-child:contains("' + area_name + '")'
+        var child_selector = 'td:nth-child(2):contains("' + area_name + '")'
         var regions = $(this).closest('div').find(".region")
 
         if( $(this).is(':checked') ) {
@@ -33,18 +34,18 @@ $(document).ready(function(){
 
     $(".region").click(function() {
         var region_name = $(this).attr('id').replace(/\s/g, '');
-        var child_selector = 'td:nth-child(2):contains("' + region_name + '")'
+        var child_selector = 'td:nth-child(3):contains("' + region_name + '")'
 
         if ($(this).is(":checked")) {
             $('tr:has('+child_selector+')').each(function(){
-                $(this).find("td:nth-child(2) > span").css('display', 'none');
-                $(this).find("td:nth-child(4) > span").css('display', 'none');
+                $(this).find("td:nth-child(3) > span").css('display', 'none');
+//                $(this).find("td:nth-child(5) > span").css('display', 'none');
                 $(this).find("td:nth-child(6) > span").css('display', 'none');
             });
         } else {
             $('tr:has('+child_selector+')').each(function(){
-                $(this).find("td:nth-child(2) > span").css('display', 'inline-block');
-                $(this).find("td:nth-child(4) > span").css('display', 'inline-block');
+                $(this).find("td:nth-child(3) > span").css('display', 'inline-block');
+//                $(this).find("td:nth-child(5) > span").css('display', 'inline-block');
                 $(this).find("td:nth-child(6) > span").css('display', 'inline-block');
             });
         }
