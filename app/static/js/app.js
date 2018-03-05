@@ -21,14 +21,24 @@ $(document).ready(function(){
                 this.checked=true;
             });
 
-            $('tr:has('+child_selector+')').css('display', 'none')
+//            $('tr:has('+child_selector+')').css('display', 'none')
+            $('tr:has('+child_selector+')').each(function(){
+                $(this).find("td:nth-child(3) > span").css('display', 'none');
+//                $(this).find("td:nth-child(5) > span").css('display', 'none');
+                $(this).find("td:nth-child(6) > span").css('display', 'none');
+            });
 
         } else {
             regions.each(function(){
                 this.checked=false;
             });
 
-            $('tr:has('+child_selector+')').css('display', 'table-row')
+//            $('tr:has('+child_selector+')').css('display', 'table-row')
+            $('tr:has('+child_selector+')').each(function(){
+                $(this).find("td:nth-child(3) > span").css('display', 'inline-block');
+//                $(this).find("td:nth-child(5) > span").css('display', 'inline-block');
+                $(this).find("td:nth-child(6) > span").css('display', 'inline-block');
+            });
         }
     })
 
