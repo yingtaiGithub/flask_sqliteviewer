@@ -60,4 +60,67 @@ $(document).ready(function(){
             });
         }
     })
+
+
+    $("#submit").click(function(){
+        var checked_areas = new Array()
+        var checked_regions = new Array()
+
+        $(".area:checked").each(function(){
+            checked_areas.push($(this).attr('id'))
+        })
+
+        $(".area:not(:checked)").closest('div').find('.region:checked').each(function(){
+            checked_regions.push($(this).attr('id'))
+        })
+
+        $.getJSON($SCRIPT_ROOT + '/submit', {
+            areas: JSON.stringify(checked_areas),
+            regions: JSON.stringify(checked_regions)
+        }, function(data){
+
+        });
+    });
+
+    $("#restart").click(function() {
+        $.getJSON($SCRIPT_ROOT + '/get_status', {
+        }, function(data){
+            // Uncheck all checkboxes:
+            $("input:checkbox").removeAttr('checked');
+
+            // Check the areas and regions.
+            var areas = data.areas;
+            var regions = data.regions;
+
+            jQuery.each(areas, function(i, area){
+                $('#' + area).prop('checked', true);
+
+                var child_selector = 'td:nth-child(2):contains("' + area + '")'
+                var regions = $('#' + area).closest('div').find(".region")
+
+                regions.each(function(){
+                    this.checked=true;
+                });
+
+                $('tr:has('+child_selector+')').each(function(){
+                    $(this).find("td:nth-child(3) > span").css('display', 'none');
+    //                $(this).find("td:nth-child(5) > span").css('display', 'none');
+                    $(this).find("td:nth-child(6) > span").css('display', 'none');
+                });
+            });
+
+            jQuery.each(regions, function(i, region) {
+                $('#' + region).prop('checked', true);
+
+                var child_selector = 'td:nth-child(3):contains("' + region + '")'
+                $('tr:has('+child_selector+')').each(function(){
+                    $(this).find("td:nth-child(3) > span").css('display', 'none');
+    //                $(this).find("td:nth-child(5) > span").css('display', 'none');
+                    $(this).find("td:nth-child(6) > span").css('display', 'none');
+                });
+
+            })
+        });
+    })
 });
+

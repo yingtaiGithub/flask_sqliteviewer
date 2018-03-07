@@ -1,7 +1,8 @@
+import ast
 import pandas as pd
 
 from app import app, db
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, jsonify
 from app.models import *
 import sqlite3
 
@@ -21,6 +22,40 @@ def home():
     table = final_df.to_html(index=False)
 
     return render_template('home.html', area_regions=area_regions, table=table)
+
+@app.route("/submit")
+def submit():
+    areas = request.args.get('areas', None)
+    regions = request.args.get("regions", None)
+
+    areas = ast.literal_eval(areas)
+    regions = ast.literal_eval(regions)
+
+    area_rows = [Status(area, True) for area in areas]
+    region_rows =[Status(region, False) for region in regions]
+
+    rows = area_rows + region_rows
+
+    Status.query.delete()
+    db.session.add_all(rows)
+    db.session.commit()
+
+    print (areas)
+    print (regions)
+
+    return "Success"
+
+@app.route("/get_status")
+def get_status():
+    area_rows = Status.query.filter_by(area=True)
+    region_rows = Status.query.filter_by(area=False)
+
+    areas = [row.name for row in area_rows]
+    regions = [row.name for row in region_rows]
+
+    data = {'areas': areas, 'regions': regions}
+
+    return jsonify(data)
 
 
 @app.errorhandler(404)

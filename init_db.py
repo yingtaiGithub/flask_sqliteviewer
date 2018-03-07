@@ -42,7 +42,6 @@ def init_threadhold(input_csv):
     df = df[['id', 'origin_area', 'origin_region', 'destination_area', 'threshold']]
     df.to_sql('threshold', cnx, if_exists='replace', index=False)
 
-
 def init_offset(input_csv):
     # data = [('CATL', 'CATL', 43),
     #         ('DSW', 'FLA', 45),
@@ -87,7 +86,7 @@ def init_cache(input_csv=None):
 if __name__ == "__main__":
     pass
     cnx = sqlite3.connect(app.config['SQLALCHEMY_DATABASE_URI'].replace('sqlite:///', ''))
-    # db.create_all()
+    db.create_all()
     # init_region_area()
     # init_threadhold('threshold.csv')
     # init_offset('offset.csv')

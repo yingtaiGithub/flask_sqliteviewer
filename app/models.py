@@ -39,4 +39,16 @@ class Final(db.Model):
     cache = db.Column(db.Integer)
 
 
+class Status(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20))
+    area = db.Column(db.Boolean)
+
+    def __init__(self, name, area):
+        self.name = name
+        self.area = area
+
+
+
+
 

@@ -6,11 +6,11 @@
             {% for area_region in area_regions %}
 
             <div>
-                <label> <input id="{{ area_region[0]}}" type="checkbox" class="area">{{ area_region[0] }} </label>
+                <label> <input id="{{ area_region[0] }}" type="checkbox" class="area">{{ area_region[0] }} </label>
 
                 {% for region in area_region[1] %}
 
-                <label><input id="{{ region }} " type="checkbox" class="region">{{ region }}</label>
+                <label><input id="{{ region }}" type="checkbox" class="region">{{ region }}</label>
 
                 {% endfor %}
             </div>

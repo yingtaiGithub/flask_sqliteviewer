@@ -18,6 +18,10 @@
         <![endif]-->
         <link rel="stylesheet" href="/static/css/app.css?q=23">
     {% block css %} {% endblock%}
+
+        <script type=text/javascript>
+          $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
     </head>
     <body>
         <header>
