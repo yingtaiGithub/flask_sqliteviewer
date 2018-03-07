@@ -40,9 +40,6 @@ def submit():
     db.session.add_all(rows)
     db.session.commit()
 
-    print (areas)
-    print (regions)
-
     return "Success"
 
 @app.route("/get_status")
