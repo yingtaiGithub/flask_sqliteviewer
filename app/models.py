@@ -24,10 +24,15 @@ class Offset(db.Model):
 
 class CacheValue(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    origin_area = db.Column(db.String(20))
+    origin_region = db.Column(db.String(20))
     destination_area = db.Column(db.String(20))
-    msi_origin = db.Column(db.String(20))
+    # msi_origin = db.Column(db.String(20))
     cache = db.Column(db.Integer)
+
+class Model(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    origin_area = db.Column(db.String(20))
+
 
 class Final(db.Model):
     id = db.Column(db.Integer, primary_key = True)

@@ -63,7 +63,7 @@ $(document).ready(function(){
 
 
     $("#submit").click(function(){
-        $("td > span").css('display', 'inline-block')
+//        $("td > span").css('display', 'inline-block')
 
         var checked_areas = new Array()
         var checked_regions = new Array()
@@ -76,34 +76,34 @@ $(document).ready(function(){
             checked_regions.push($(this).attr('id'))
         })
 
-        jQuery.each(checked_areas, function(i, area){
-            var child_selector = 'td:nth-child(2):contains("' + area + '")'
-            $('tr:has('+child_selector+')').each(function(){
-                $(this).find("td:nth-child(3) > span").css('display', 'none');
-//                $(this).find("td:nth-child(5) > span").css('display', 'none');
-                $(this).find("td:nth-child(6) > span").css('display', 'none');
-            });
-        });
-
-        jQuery.each(checked_regions, function(i, region) {
-            var child_selector = 'td:nth-child(3):contains("' + region + '")'
-            $('tr:has('+child_selector+')').each(function(){
-                $(this).find("td:nth-child(3) > span").css('display', 'none');
-//                $(this).find("td:nth-child(5) > span").css('display', 'none');
-                $(this).find("td:nth-child(6) > span").css('display', 'none');
-            });
-        });
-
+//        jQuery.each(checked_areas, function(i, area){
+//            var child_selector = 'td:nth-child(2):contains("' + area + '")'
+//            $('tr:has('+child_selector+')').each(function(){
+//                $(this).find("td:nth-child(3) > span").css('display', 'none');
+////                $(this).find("td:nth-child(5) > span").css('display', 'none');
+//                $(this).find("td:nth-child(6) > span").css('display', 'none');
+//            });
+//        });
+//
+//        jQuery.each(checked_regions, function(i, region) {
+//            var child_selector = 'td:nth-child(3):contains("' + region + '")'
+//            $('tr:has('+child_selector+')').each(function(){
+//                $(this).find("td:nth-child(3) > span").css('display', 'none');
+////                $(this).find("td:nth-child(5) > span").css('display', 'none');
+//                $(this).find("td:nth-child(6) > span").css('display', 'none');
+//            });
+//        });
         $.getJSON($SCRIPT_ROOT + '/submit', {
             areas: JSON.stringify(checked_areas),
             regions: JSON.stringify(checked_regions)
         }, function(data){
-
+            $("#table").html('')
+            $("#table").html(data)
         });
     });
 
     $("#restart").click(function() {
-        $.getJSON($SCRIPT_ROOT + '/get_status', {
+        $.getJSON($SCRIPT_ROOT + '/restart', {
         }, function(data){
             // Uncheck all checkboxes:
             $("input:checkbox").removeAttr('checked');
@@ -115,32 +115,35 @@ $(document).ready(function(){
             jQuery.each(areas, function(i, area){
                 $('#' + area).prop('checked', true);
 
-                var child_selector = 'td:nth-child(2):contains("' + area + '")'
+//                var child_selector = 'td:nth-child(2):contains("' + area + '")'
                 var regions = $('#' + area).closest('div').find(".region")
-
+//
                 regions.each(function(){
                     this.checked=true;
                 });
-
-                $('tr:has('+child_selector+')').each(function(){
-                    $(this).find("td:nth-child(3) > span").css('display', 'none');
-    //                $(this).find("td:nth-child(5) > span").css('display', 'none');
-                    $(this).find("td:nth-child(6) > span").css('display', 'none');
-                });
+//
+//                $('tr:has('+child_selector+')').each(function(){
+//                    $(this).find("td:nth-child(3) > span").css('display', 'none');
+//    //                $(this).find("td:nth-child(5) > span").css('display', 'none');
+//                    $(this).find("td:nth-child(6) > span").css('display', 'none');
+//                });
             });
 
             jQuery.each(regions, function(i, region) {
                 $('#' + region).prop('checked', true);
 
-                var child_selector = 'td:nth-child(3):contains("' + region + '")'
-                $('tr:has('+child_selector+')').each(function(){
-                    $(this).find("td:nth-child(3) > span").css('display', 'none');
-    //                $(this).find("td:nth-child(5) > span").css('display', 'none');
-                    $(this).find("td:nth-child(6) > span").css('display', 'none');
-                });
-
+//                var child_selector = 'td:nth-child(3):contains("' + region + '")'
+//                $('tr:has('+child_selector+')').each(function(){
+//                    $(this).find("td:nth-child(3) > span").css('display', 'none');
+//    //                $(this).find("td:nth-child(5) > span").css('display', 'none');
+//                    $(this).find("td:nth-child(6) > span").css('display', 'none');
+//                });
             })
+
+            $("#table").html(data.table)
+
         });
     })
+
 });
 

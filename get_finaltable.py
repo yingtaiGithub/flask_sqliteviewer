@@ -35,4 +35,5 @@ def main():
     final_df.to_sql('final', cnx, if_exists='replace')
 
 if __name__ == "__main__":
+    # print (list(Area_Region.query.filter_by(area='ILSP')))
     main()
